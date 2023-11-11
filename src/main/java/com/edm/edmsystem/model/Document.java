@@ -3,7 +3,7 @@ package com.edm.edmsystem.model;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.w3c.dom.DocumentType;
+import com.edm.edmsystem.model.DocumentType;
 
 import java.time.LocalDate;
 
@@ -16,6 +16,8 @@ public class Document {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Enumerated(EnumType.STRING)
     private DocumentType documentType;
     private String documentNumber;
     private String correctedInvoiceNumber;
