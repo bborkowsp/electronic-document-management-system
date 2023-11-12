@@ -1,30 +1,24 @@
 package com.edm.edmsystem.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.springframework.lang.NonNull;
 
 import java.util.List;
+import java.util.Set;
 
 @Data
-@NoArgsConstructor
 @Entity
-@Table(name = "COMPANIES")
+@AllArgsConstructor
+@Builder
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String companyName;
+    private String name;
 
-    @OneToOne(cascade = CascadeType.REMOVE)
-    @JoinColumn(name = "company_address_id")
-    private Address companyAddress;
-
-    @OneToOne(cascade = CascadeType.REMOVE)
-    @JoinColumn(name = "correspondence_address_id")
-    private Address correspondenceAddress;
-
-    @OneToMany
-    @JoinColumn(name = "company_id")
-    private List<Property> properties;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @NonNull
+    private Set<Property> properties;
 }

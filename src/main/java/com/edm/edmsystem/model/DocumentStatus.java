@@ -4,5 +4,6 @@ public enum DocumentStatus {
     REJECTED,
     ACCEPTED,
     PENDING,
-    EDITED
+    EDITED,
+    CANCELLED
 }

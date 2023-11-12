@@ -1,21 +1,24 @@
 package com.edm.edmsystem.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
+import org.springframework.lang.NonNull;
 
 import java.util.List;
+import java.util.Set;
 
-@Data
-@NoArgsConstructor
+@Setter
+@Getter
 @Entity
-@Table(name = "PROPERTY_MANAGERS")
+@AllArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class PropertyManager extends User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "property_manager_id")
-    private List<Property> managedProperties;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @NonNull
+    private Set<Property> managedProperties;
 }
