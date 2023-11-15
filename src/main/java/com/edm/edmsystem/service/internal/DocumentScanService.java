@@ -1,6 +1,5 @@
 package com.edm.edmsystem.service.internal;
 
-import com.edm.edmsystem.dto.requests.UploadDocumentScanRequest;
 import com.edm.edmsystem.repository.DocumentScanRepository;
 import com.edm.edmsystem.service.DocumentScanUseCases;
 import lombok.AccessLevel;
@@ -26,24 +25,22 @@ public class DocumentScanService implements DocumentScanUseCases {
     public void processDocumentScan(MultipartFile[] files) {
         for (MultipartFile file : files) {
             try {
-                extractTextFromPDF(file);
+                String text = extractTextFromPDF(file);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
     }
 
-    public void extractTextFromPDF(MultipartFile file) throws IOException {
-        // Konwertuj MultipartFile na plik tymczasowy
+    private String extractTextFromPDF(MultipartFile file) throws IOException {
         File tempFile = convertMultipartFileToFile(file);
 
         try (PDDocument document = Loader.loadPDF(tempFile)) {
             PDFTextStripper pdfTextStripper = new PDFTextStripper();
             String text = pdfTextStripper.getText(document);
             System.out.println(text);
-            //  return text;
+            return text;
         } finally {
-            // Usuń plik tymczasowy po zakończeniu operacji
             tempFile.delete();
         }
     }
@@ -54,11 +51,6 @@ public class DocumentScanService implements DocumentScanUseCases {
             os.write(file.getBytes());
         }
         return tempFile;
-    }
-
-    @Override
-    public void createDocumentScan(UploadDocumentScanRequest uploadDocumentScanRequest) {
-
     }
 
 }

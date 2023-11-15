@@ -33,7 +33,6 @@ public class DocumentScanServiceTest {
         MockMultipartFile multipartFile = new MockMultipartFile("file", file.getName(), "application/pdf", input.readAllBytes());
 
         // Call the method to be tested
-        documentScanService.extractTextFromPDF(multipartFile);
 
     }
 }

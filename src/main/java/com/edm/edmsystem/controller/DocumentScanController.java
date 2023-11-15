@@ -21,7 +21,7 @@ class DocumentScanController {
     @PostMapping
     public ResponseEntity<Void> uploadDocumentScan(@RequestParam("file") MultipartFile[] files) {
         documentScanUseCases.processDocumentScan(files);
-        return ResponseEntity.status(HttpStatus.OK).build();
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
 }
