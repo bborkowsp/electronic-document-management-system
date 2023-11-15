@@ -23,16 +23,14 @@ public class DocumentScanServiceTest {
 
     @Test
     public void testProcessDocumentScan() throws IOException {
-        String currentDirectory = System.getProperty("user.dir");
-        System.out.println("Current Working Directory: " + currentDirectory);
-
+        //given
         File file = ResourceUtils.getFile("invoice.pdf");
         FileInputStream input = new FileInputStream(file);
 
-        // Create a MockMultipartFile with the loaded content
+        //when
         MockMultipartFile multipartFile = new MockMultipartFile("file", file.getName(), "application/pdf", input.readAllBytes());
 
-        // Call the method to be tested
+        //then
 
     }
 }
