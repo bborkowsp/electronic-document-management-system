@@ -1,9 +1,9 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/twoja_baza
-    username: twoj_login
-    password: twoje_haslo
+    url: jdbc:mysql://localhost:3306/edmsystem
+    username: edmsystem
+    password: WyEBcUPh
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop
     show-sql: true

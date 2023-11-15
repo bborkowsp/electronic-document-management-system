@@ -5,7 +5,7 @@ services:
     ports:
       - "3306:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: twoje_haslo
-      MYSQL_DATABASE: twoja_baza
-      MYSQL_USER: twoj_login
-      MYSQL_PASSWORD: twoje_haslo
+      MYSQL_ROOT_PASSWORD: WyEBcUPh
+      MYSQL_DATABASE: edmsystem
+      MYSQL_USER: edmsystem
+      MYSQL_PASSWORD: WyEBcUPh
