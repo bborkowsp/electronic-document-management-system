@@ -61,10 +61,5 @@ public class Document {
     @Embedded
     @NonNull
     private Payment payment;
-
-    @Embedded
-    @NonNull
-    private DocumentScan physicalProperties;
-
 }
 

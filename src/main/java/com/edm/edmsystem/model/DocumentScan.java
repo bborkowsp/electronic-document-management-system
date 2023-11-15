@@ -1,10 +1,10 @@
 package com.edm.edmsystem.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.*;
-import org.springframework.lang.NonNull;
-
-import java.io.File;
 
 @Data
 @Entity
@@ -16,5 +16,5 @@ public class DocumentScan {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private File documentScan;
+    //  private MultipartFile documentScan;
 }
