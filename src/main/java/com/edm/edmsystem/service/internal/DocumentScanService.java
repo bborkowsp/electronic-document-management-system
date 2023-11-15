@@ -28,7 +28,7 @@ public class DocumentScanService implements DocumentScanUseCases {
     }
 
     private void extractTextFromPDF(MultipartFile file) throws IOException {
-        file.getBytes();
+        System.out.println(file.getBytes());
     }
 
     @Override

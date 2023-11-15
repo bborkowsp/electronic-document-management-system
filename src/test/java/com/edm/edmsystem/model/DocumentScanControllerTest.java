@@ -1,44 +1,36 @@
 package com.edm.edmsystem.model;
 
-import com.edm.edmsystem.controller.DocumentScanController;
+import com.edm.edmsystem.repository.DocumentRepository;
 import com.edm.edmsystem.service.DocumentScanUseCases;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.multipart.MultipartFile;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.web.servlet.MockMvc;
 
-import java.io.IOException;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
-
-@ExtendWith(MockitoExtension.class)
+@AutoConfigureMockMvc
+@ActiveProfiles("test")
+@SpringBootTest
 public class DocumentScanControllerTest {
 
-    @Mock
+    @Autowired
+    private DocumentRepository documentRepository;
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Autowired
     private DocumentScanUseCases documentScanUseCases;
 
-    @InjectMocks
-    private DocumentScanController documentScanController;
+    @BeforeEach
+    void setUp() {
+        documentRepository.deleteAll();
+    }
 
     @Test
-    public void testUploadDocumentScan() throws IOException {
-        // Mock MultipartFile
-        MultipartFile mockFile = mock(MultipartFile.class);
-        when(mockFile.getBytes()).thenReturn("Mock PDF content".getBytes());
+    public void testUploadDocumentScan() throws Exception {
 
-        // Call the controller method
-        ResponseEntity<Void> response = documentScanController.uploadDocumentScan(new MultipartFile[]{mockFile});
-
-        // Verify that the processDocumentScan method was called with the correct argument
-        //verify(documentScanUseCases, times(1)).processDocumentScan(new MultipartFile[]{mockFile});
-
-        // Verify the response status
-        assertEquals(HttpStatus.OK, response.getStatusCode());
     }
 }

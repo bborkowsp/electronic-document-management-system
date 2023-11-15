@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.List;
 
 @RequiredArgsConstructor
-public class DocumentController {
+class DocumentController {
 
     @GetMapping("/documents")
-    public List<Document> getDocuments(){
+    public List<Document> getDocuments() {
         return null;
     }
 }
