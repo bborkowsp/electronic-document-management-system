@@ -14,7 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 
 @RestController
-@RequestMapping("/upload")
+@RequestMapping("/edm/upload")
 @RequiredArgsConstructor(access = AccessLevel.PACKAGE)
 class DocumentScanController {
 
@@ -22,7 +22,7 @@ class DocumentScanController {
 
     @PostMapping
     public ResponseEntity<Void> uploadDocumentScan(@RequestParam("file") MultipartFile[] uploadedFiles) throws IOException {
-        documentScanUseCases.processDocumentScan(uploadedFiles);
+        documentScanUseCases.uploadDocumentScan(uploadedFiles);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 

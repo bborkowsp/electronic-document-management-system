@@ -7,5 +7,5 @@ import java.io.IOException;
 
 public interface DocumentScanUseCases {
 
-    void processDocumentScan(MultipartFile[] uploadedFiles) throws IOException;
+    void uploadDocumentScan(MultipartFile[] uploadedFiles) throws IOException;
 }

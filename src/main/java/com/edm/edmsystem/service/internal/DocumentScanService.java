@@ -28,7 +28,7 @@ public class DocumentScanService implements DocumentScanUseCases {
     private final DocumentUseCases documentUseCases;
 
     @Override
-    public void processDocumentScan(MultipartFile[] uploadedFiles) throws IOException {
+    public void uploadDocumentScan(MultipartFile[] uploadedFiles) throws IOException {
         for (MultipartFile uploadedFile : uploadedFiles) {
             try {
                 final var extractedTextFromDocument = extractTextFromDocument(uploadedFile);

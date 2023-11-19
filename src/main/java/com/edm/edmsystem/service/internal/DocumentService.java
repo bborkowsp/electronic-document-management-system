@@ -1,22 +1,32 @@
 package com.edm.edmsystem.service.internal;
 
+import com.edm.edmsystem.dto.resources.DocumentResource;
+import com.edm.edmsystem.mapper.DocumentMapper;
 import com.edm.edmsystem.model.Document;
 import com.edm.edmsystem.repository.DocumentRepository;
 import com.edm.edmsystem.service.DocumentUseCases;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
 import java.util.Map;
 
 @Service
 @RequiredArgsConstructor(access = AccessLevel.PACKAGE)
-public class DocumentService implements DocumentUseCases {
+class DocumentService implements DocumentUseCases {
+
     private final DocumentRepository documentRepository;
 
-    public List<Document> getDocuments() {
-        return documentRepository.findAll();
+    private final DocumentMapper documentMapper;
+
+    @Override
+    @Transactional(readOnly = true)
+    public Page<DocumentResource> getDocuments(Pageable pageable) {
+        final var products = documentRepository.findAll(pageable);
+        return products.map(documentMapper::mapDocumentToDocumentResource);
     }
 
     public Document createDocumentFromPdf(Map<String, String> results) {
