@@ -1,5 +1,6 @@
 package com.edm.edmsystem.service.internal;
 
+import com.edm.edmsystem.dto.requests.UpdateDocumentRequest;
 import com.edm.edmsystem.dto.resources.DocumentResource;
 import com.edm.edmsystem.mapper.DocumentMapper;
 import com.edm.edmsystem.model.Document;
@@ -27,6 +28,14 @@ class DocumentService implements DocumentUseCases {
     public Page<DocumentResource> getDocuments(Pageable pageable) {
         final var products = documentRepository.findAll(pageable);
         return products.map(documentMapper::mapDocumentToDocumentResource);
+    }
+
+    @Override
+    @Transactional
+    public void updateDocument(Long id, UpdateDocumentRequest updateDocumentRequest) {
+        final var document = documentRepository.findById(id).orElseThrow();
+        documentMapper.updateDocumentFromUpdateDocumentRequest(document, updateDocumentRequest);
+        documentRepository.save(document);
     }
 
     public Document createDocumentFromPdf(Map<String, String> results) {

@@ -17,27 +17,29 @@ public class Document {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
+    @Column(nullable = false)
     private DocumentType documentType;
 
     private DocumentStatus documentStatus;
 
-
+    @Column(nullable = false)
     private String documentNumber;
 
     private String correctedInvoiceNumber;
 
+    @Column(nullable = false)
     private String documentDescription;
 
-
+    @Column(nullable = false)
     private LocalDate receiptDate;
-
+    @Column(nullable = false)
     private LocalDate saleDate;
-
+    @Column(nullable = false)
     private LocalDate issueDate;
-
-    private boolean splitPayment;
-    private boolean isElectronicDocument;
+    @Column(nullable = false)
+    private Boolean splitPayment;
+    @Column(nullable = false)
+    private Boolean isElectronicDocument;
 
 
     @OneToOne(cascade = CascadeType.ALL)
