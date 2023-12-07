@@ -1,7 +1,7 @@
 package com.edm.edmsystem.mapper.internal;
 
 import com.edm.edmsystem.dto.requests.UpdateDocumentRequest;
-import com.edm.edmsystem.dto.resources.DocumentResource;
+import com.edm.edmsystem.dto.resources.DocumentInTableResource;
 import com.edm.edmsystem.mapper.*;
 import com.edm.edmsystem.model.Document;
 import lombok.NonNull;
@@ -50,9 +50,19 @@ class DocumentMapperService implements DocumentMapper {
     }
 
     @Override
-    public DocumentResource mapDocumentToDocumentResource(@NonNull Document document) {
-        return DocumentResource.builder().
-                documentNumber(document.getDocumentNumber())
+    public DocumentInTableResource mapDocumentToDocumentResource(@NonNull Document document) {
+        return DocumentInTableResource.builder().
+                id(document.getId())
+                .documentType(document.getDocumentType())
+                .documentStatus(document.getDocumentStatus())
+                .documentNumber(document.getDocumentNumber())
+                .correctedInvoiceNumber(document.getCorrectedInvoiceNumber())
+                .documentDescription(document.getDocumentDescription())
+                .receiptDate(document.getReceiptDate())
+                .saleDate(document.getSaleDate())
+                .payment(paymentMapper.mapPaymentToPaymentResource(document.getPayment()))
+                .supplierCompany(companyMapper.mapCompanyToCompanyResource(document.getSupplierCompany()))
+                .recipientCompany(companyMapper.mapCompanyToCompanyResource(document.getRecipientCompany()))
                 .build();
     }
 }

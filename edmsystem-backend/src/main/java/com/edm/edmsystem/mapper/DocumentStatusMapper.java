@@ -5,4 +5,6 @@ import com.edm.edmsystem.model.DocumentStatus;
 
 public interface DocumentStatusMapper {
     DocumentStatus mapDocumentStatusResourceToDocumentStatus(DocumentStatusResource documentStatusResource);
+
+    DocumentStatusResource mapDocumentStatusToDocumentStatusResource(DocumentStatus documentStatus);
 }

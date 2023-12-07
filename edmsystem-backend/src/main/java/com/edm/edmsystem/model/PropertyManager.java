@@ -5,13 +5,13 @@ import lombok.*;
 import lombok.experimental.SuperBuilder;
 import org.springframework.lang.NonNull;
 
-import java.util.List;
 import java.util.Set;
 
 @Setter
 @Getter
 @Entity
 @AllArgsConstructor
+@SuperBuilder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class PropertyManager extends User {
     @Id

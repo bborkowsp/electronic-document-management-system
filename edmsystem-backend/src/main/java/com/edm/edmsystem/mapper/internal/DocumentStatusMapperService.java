@@ -13,4 +13,9 @@ class DocumentStatusMapperService implements DocumentStatusMapper {
     public DocumentStatus mapDocumentStatusResourceToDocumentStatus(DocumentStatusResource documentStatusResource) {
         return null;
     }
+
+    @Override
+    public DocumentStatusResource mapDocumentStatusToDocumentStatusResource(DocumentStatus documentStatus) {
+        return null;
+    }
 }

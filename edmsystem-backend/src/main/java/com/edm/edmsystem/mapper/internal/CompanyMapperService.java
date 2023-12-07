@@ -13,4 +13,11 @@ class CompanyMapperService implements CompanyMapper {
     public Company mapCompanyResourceToCompany(CompanyResource companyResource) {
         return null;
     }
+
+    @Override
+    public CompanyResource mapCompanyToCompanyResource(Company company) {
+        return CompanyResource.builder()
+                .name(company.getName())
+                .build();
+    }
 }

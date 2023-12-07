@@ -1,7 +1,6 @@
 package com.edm.edmsystem.controller;
 
 import com.edm.edmsystem.service.DocumentScanUseCases;
-import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +14,7 @@ import java.io.IOException;
 
 @RestController
 @RequestMapping("/edm/upload")
-@RequiredArgsConstructor(access = AccessLevel.PACKAGE)
+@RequiredArgsConstructor
 class DocumentScanController {
 
     private final DocumentScanUseCases documentScanUseCases;

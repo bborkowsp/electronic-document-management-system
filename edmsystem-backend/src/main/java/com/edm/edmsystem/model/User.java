@@ -1,12 +1,16 @@
 package com.edm.edmsystem.model;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 @Data
 @Entity
+@SuperBuilder
 @AllArgsConstructor
-@Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class User {
     @Id
@@ -18,4 +22,5 @@ public class User {
 
     @Column(nullable = false)
     private String lastName;
+
 }

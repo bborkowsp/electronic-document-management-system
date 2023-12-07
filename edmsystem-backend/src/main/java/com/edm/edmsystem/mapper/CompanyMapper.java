@@ -5,4 +5,6 @@ import com.edm.edmsystem.model.Company;
 
 public interface CompanyMapper {
     Company mapCompanyResourceToCompany(CompanyResource companyResource);
+
+    CompanyResource mapCompanyToCompanyResource(Company company);
 }

@@ -1,4 +1,11 @@
 package com.edm.edmsystem.dto.resources;
 
-public record CompanyResource() {
+import lombok.Builder;
+import lombok.extern.jackson.Jacksonized;
+
+@Builder
+@Jacksonized
+public record CompanyResource(
+        String name
+) {
 }

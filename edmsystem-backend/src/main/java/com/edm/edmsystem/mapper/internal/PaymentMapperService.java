@@ -13,4 +13,18 @@ class PaymentMapperService implements PaymentMapper {
     public Payment mapPaymentResourceToPayment(PaymentResouce paymentResouce) {
         return null;
     }
+
+    @Override
+    public PaymentResouce mapPaymentToPaymentResource(Payment payment) {
+        return PaymentResouce.builder()
+                .bankAccountNumber(payment.getBankAccountNumber())
+                .exchangeRate(payment.getExchangeRate())
+                .grossAmount(payment.getGrossAmount())
+                .netAmount(payment.getNetAmount())
+                .vatAmount(payment.getVatAmount())
+                .vatRate(payment.getVatRate())
+                .dueDate(payment.getDueDate())
+                .currency(payment.getCurrency())
+                .build();
+    }
 }
