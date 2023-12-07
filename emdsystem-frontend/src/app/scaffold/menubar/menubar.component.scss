@@ -1,0 +1,32 @@
+.menubar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f0f0f0;
+}
+
+.menubar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.menubar-logo img {
+  max-height: 40px; /* Dostosuj wysokość obrazka do potrzeb */
+  margin-right: 10px; /* Dodaj odstęp między obrazkiem a tekstem */
+}
+
+.menubar-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.menubar-links li {
+  margin-right: 20px;
+}
+
+.menubar-actions {
+  /* Dodaj stylizację dla kontenera działań, jeśli to konieczne */
+}
