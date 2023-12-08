@@ -22,10 +22,10 @@ class DocumentMapperService implements DocumentMapper {
     @Override
     public void updateDocumentFromUpdateDocumentRequest(Document document, UpdateDocumentRequest updateDocumentRequest) {
         final var recipentCompany = companyMapper.mapCompanyResourceToCompany(updateDocumentRequest
-                .recipientCompanyResource());
+                .recipientCompanyInTableResource());
         final var supplierCompany = companyMapper.mapCompanyResourceToCompany(updateDocumentRequest
-                .supplierCompanyResource());
-        final var payment = paymentMapper.mapPaymentResourceToPayment(updateDocumentRequest.paymentResouce());
+                .supplierCompanyInTableResource());
+        final var payment = paymentMapper.mapPaymentResourceToPayment(updateDocumentRequest.paymentInTableResource());
         final var property = propertyMapper.mapPropertyResourceToProperty(updateDocumentRequest.propertyResource());
         final var documentStatus = documentStatusMapper.mapDocumentStatusResourceToDocumentStatus(updateDocumentRequest
                 .documentStatusResource());
@@ -54,15 +54,12 @@ class DocumentMapperService implements DocumentMapper {
         return DocumentInTableResource.builder().
                 id(document.getId())
                 .documentType(document.getDocumentType())
-                .documentStatus(document.getDocumentStatus())
                 .documentNumber(document.getDocumentNumber())
-                .correctedInvoiceNumber(document.getCorrectedInvoiceNumber())
-                .documentDescription(document.getDocumentDescription())
                 .receiptDate(document.getReceiptDate())
                 .saleDate(document.getSaleDate())
-                .payment(paymentMapper.mapPaymentToPaymentResource(document.getPayment()))
-                .supplierCompany(companyMapper.mapCompanyToCompanyResource(document.getSupplierCompany()))
-                .recipientCompany(companyMapper.mapCompanyToCompanyResource(document.getRecipientCompany()))
+                .payment(paymentMapper.mapPaymentToPaymentInTableResource(document.getPayment()))
+                .supplierCompany(companyMapper.mapCompanyToCompanyInTableResource(document.getSupplierCompany()))
+                .recipientCompany(companyMapper.mapCompanyToCompanyInTableResource(document.getRecipientCompany()))
                 .build();
     }
 }

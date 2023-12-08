@@ -5,7 +5,7 @@ import lombok.extern.jackson.Jacksonized;
 
 @Builder
 @Jacksonized
-public record CompanyResource(
+public record CompanyInTableResource(
         String name
 ) {
 }

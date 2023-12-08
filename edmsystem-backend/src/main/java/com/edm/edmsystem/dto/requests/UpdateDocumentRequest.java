@@ -27,10 +27,10 @@ public record UpdateDocumentRequest(
         @NotNull @Valid LocalDate issueDate,
         @NotNull Boolean splitPayment,
         @NotNull Boolean isElectronicDocument,
-        @NotNull @Valid CompanyResource supplierCompanyResource,
-        @NotNull @Valid CompanyResource recipientCompanyResource,
+        @NotNull @Valid CompanyInTableResource supplierCompanyInTableResource,
+        @NotNull @Valid CompanyInTableResource recipientCompanyInTableResource,
         @NotNull @Valid PropertyResource propertyResource,
         @NotNull List<@NotNull @Valid DocumentHistoryResource> documentChangeHistory,
-        @Valid PaymentResouce paymentResouce
+        @Valid PaymentInTableResource paymentInTableResource
 ) {
 }

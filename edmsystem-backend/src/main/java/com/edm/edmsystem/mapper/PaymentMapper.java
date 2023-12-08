@@ -1,10 +1,10 @@
 package com.edm.edmsystem.mapper;
 
-import com.edm.edmsystem.dto.resources.PaymentResouce;
+import com.edm.edmsystem.dto.resources.PaymentInTableResource;
 import com.edm.edmsystem.model.Payment;
 
 public interface PaymentMapper {
-    Payment mapPaymentResourceToPayment(PaymentResouce paymentResouce);
+    Payment mapPaymentResourceToPayment(PaymentInTableResource paymentInTableResource);
 
-    PaymentResouce mapPaymentToPaymentResource(Payment payment);
+    PaymentInTableResource mapPaymentToPaymentInTableResource(Payment payment);
 }

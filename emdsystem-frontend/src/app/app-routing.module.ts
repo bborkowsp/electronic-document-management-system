@@ -1,12 +1,12 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from "./home/home.component";
-import {DocumentsComponent} from "./documents/documents.component";
+import {DocumentListComponent} from "./document/components/document-list/document-list.component";
 
 const routes: Routes = [
-  {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
-  {path: 'documents', component: DocumentsComponent}
+  {path: 'document-list', component: DocumentListComponent}
 ];
 
 @NgModule({
