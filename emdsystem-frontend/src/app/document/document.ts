@@ -4,15 +4,15 @@ import {DocumentsType} from "./domain/document-type/documents-type.enum";
 
 export class Document {
   constructor(
-    public documentId = 0,
+    public id = 0,
+    public documentType: DocumentsType | null = null,
+    public documentNumber = '',
+    public receiptDate: Date | null = null,
+    public saleDate: Date | null = null,
+    public issueDate: Date | null = null,
+    public payment: Payment | null = null,
     public supplierCompany: Company | null = null,
     public recipientCompany: Company | null = null,
-    public documentType: DocumentsType | null = null,
-    public issueDate: Date | null = null,
-    public saleDate: Date | null = null,
-    public receiptDate: Date | null = null,
-    public documentNumber = '',
-    public payment: Payment | null = null
   ) {
   }
 }

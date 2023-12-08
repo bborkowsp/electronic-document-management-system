@@ -1,4 +1,4 @@
-import {Component, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Observable, tap} from "rxjs";
 import {MatPaginator} from '@angular/material/paginator';
 
@@ -11,29 +11,38 @@ import {Document} from "../../document";
   templateUrl: './document-list.component.html',
   styleUrls: ['./document-list.component.scss'],
 })
-export class DocumentListComponent {
+export class DocumentListComponent implements OnInit {
   readonly displayedColumns: string[] = [
-    'documentId',
-    'supplierCompany',
-    'recipientCompany',
-    'documentType',
-    'issueDate',
-    'saleDate',
-    'receiptDate',
-    'documentNumber',
-    'netAmount',
-    'grossAmount',
-    'currency'
+    'id',
+    // 'documentType',
+    // 'documentNumber',
+    // 'receiptDate',
+    // 'saleDate',
+    // 'issueDate',
+    // 'receiptDate',
+    // 'grossAmount',
+    // 'netAmount',
+    // 'currency',
+    // 'supplierCompany',
+    // 'recipientCompany',
   ];
   documents$: Observable<Document[]>;
   dataLength: number = 0;
   @ViewChild(MatPaginator) readonly paginator!: MatPaginator;
 
   constructor(private readonly documentService: DocumentService) {
+    console.log('Before getData');
+
     this.documents$ = this.getData();
   }
 
+  ngOnInit() {
+    this.getData();
+  }
+
   getData(): Observable<Document[]> {
+    console.log('im here');
+
     return this.documentService.getAllDocuments().pipe(
       tap({
         next: (documents) => (this.dataLength = documents.length),
