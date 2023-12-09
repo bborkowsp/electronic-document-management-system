@@ -1,0 +1,25 @@
+/* search-document.component.scss */
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 100px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-top: 10px;
+}
+
+label {
+  margin-right: 20px;
+  font-style: italic;
+  font-weight: bold;
+  min-width: 150px;
+}
+
+button {
+  margin-top: 10px;
+}

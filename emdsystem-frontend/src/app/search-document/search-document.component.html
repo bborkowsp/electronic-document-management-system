@@ -1,1 +1,26 @@
-<p>search-document works!</p>
+<!-- search-document.component.html -->
+<div>
+  <form (submit)="search()">
+    <div class="column">
+      <div class="row">
+        <label for="documentId">Id Dokumentu:</label>
+        <input type="text" id="documentId" name="documentId" [(ngModel)]="searchQuery.documentId"/>
+      </div>
+      <div class="row">
+        <label for="company">Spółka:</label>
+        <input type="text" id="company" name="company" [(ngModel)]="searchQuery.company"/>
+      </div>
+      <div class="row">
+        <label for="supplier">Dostawca:</label>
+        <input type="text" id="supplier" name="supplier" [(ngModel)]="searchQuery.supplier"/>
+      </div>
+      <div class="row">
+        <label for="invoiceNumber">Numer faktury:</label>
+        <input type="text" id="invoiceNumber" name="invoiceNumber" [(ngModel)]="searchQuery.invoiceNumber"/>
+      </div>
+      <div class="row">
+        <button type="submit">Szukaj</button>
+      </div>
+    </div>
+  </form>
+</div>

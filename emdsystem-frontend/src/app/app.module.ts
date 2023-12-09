@@ -13,8 +13,9 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatButtonModule} from "@angular/material/button";
-import { ImportScanComponent } from './import-scan/import-scan.component';
-import { SearchDocumentComponent } from './search-document/search-document.component';
+import {ImportScanComponent} from './import-scan/import-scan.component';
+import {SearchDocumentComponent} from './search-document/search-document.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { SearchDocumentComponent } from './search-document/search-document.compo
     MatInputModule,
     MatToolbarModule,
     MatIconModule,
-    DocumentModule
+    DocumentModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
