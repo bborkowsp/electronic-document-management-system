@@ -1,21 +1,25 @@
 import {Injectable} from '@angular/core';
-import {map, Observable} from "rxjs";
+import {map, Observable, tap} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {Document} from "./document";
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class DocumentService {
-  private baseURL = 'http://localhost:8080/edm/document';
+    private baseURL = 'http://localhost:8080/edm/document';
 
-  constructor(private httpClient: HttpClient) {
-  }
+    constructor(private httpClient: HttpClient) {
+    }
 
-  getAllDocuments(): Observable<Document[]> {
-    return this.httpClient
-      .get<{ content: Document[] }>(this.baseURL)
-      .pipe(map((response) => response.content));
-  }
+    getAllDocuments(): Observable<Document[]> {
+        return this.httpClient
+            .get<{ content: Document[] }>(this.baseURL)
+            .pipe(
+                map(response => response.content),
+                tap(documents => console.log('Documents in Service:', documents))
+            );
+    }
+
 
 }

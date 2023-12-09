@@ -1,6 +1,6 @@
 export class Company {
-  constructor(
-    public companyName = ''
-  ) {
-  }
+    constructor(
+        public companyName: string
+    ) {
+    }
 }
