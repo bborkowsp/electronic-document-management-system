@@ -1,16 +1,16 @@
-<h1 class="caption">Documents</h1>
+<h1 class="caption">Documents list</h1>
 
 <div class="mat-elevation-z8 table-container">
-    <app-document-table
-            [documents]="documents$"
-            [displayedColumns]="displayedColumns"
-    >
-    </app-document-table>
-    <app-paginator
-            [length]="dataLength"
-            [pageSize]="10"
-            [pageSizeOptions]="[5, 10, 25, 100]"
-    >
-    </app-paginator>
+  <app-document-table
+    [documents]="documents$"
+    [displayedColumns]="displayedColumns"
+  >
+  </app-document-table>
+  <app-paginator
+    [length]="dataLength"
+    [pageSize]="10"
+    [pageSizeOptions]="[5, 10, 25, 100]"
+  >
+  </app-paginator>
 </div>
 
