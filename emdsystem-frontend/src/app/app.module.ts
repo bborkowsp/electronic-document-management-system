@@ -13,11 +13,15 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatButtonModule} from "@angular/material/button";
+import { ImportScanComponent } from './import-scan/import-scan.component';
+import { SearchDocumentComponent } from './search-document/search-document.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    ImportScanComponent,
+    SearchDocumentComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,18 @@
+<div class="outer-container">
+  <h2>Import Scan</h2>
+  <div class="drop-container" (dragover)="onDragOver($event)" (drop)="onDrop($event)">
+    <p>Drag & drop files here or click to select</p>
+    <input type="file" (change)="onFilesSelected($event)" accept=".pdf,.doc,.docx" multiple style="display: none;"
+           #fileInput>
+    <button mat-mini-fab color="primary" class="upload-btn" (click)="fileInput.click()">
+      <mat-icon>attach_file</mat-icon>
+    </button>
+    <div *ngIf="fileNames.length > 0" class="selected-files">
+      <p>Selected files:</p>
+      <ul>
+        <li *ngFor="let fileName of fileNames">{{ fileName }}</li>
+      </ul>
+    </div>
+  </div>
+  <button mat-button class="upload-button" (click)="uploadFiles()" [disabled]="fileNames.length === 0">Upload</button>
+</div>
