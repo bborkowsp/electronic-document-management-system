@@ -52,5 +52,5 @@ function SharedModule() {
     MatMenuModule,
   ]
 })
-export class DocumentModule {
+export class DocumentsModule {
 }

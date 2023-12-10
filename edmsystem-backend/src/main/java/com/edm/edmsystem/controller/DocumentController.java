@@ -2,6 +2,7 @@ package com.edm.edmsystem.controller;
 
 import com.edm.edmsystem.dto.requests.UpdateDocumentRequest;
 import com.edm.edmsystem.dto.resources.DocumentInTableResource;
+import com.edm.edmsystem.dto.resources.DocumentResource;
 import com.edm.edmsystem.service.DocumentUseCases;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -21,6 +22,12 @@ class DocumentController {
     public ResponseEntity<Page<DocumentInTableResource>> getDocuments(Pageable pageable) {
         final var pageOfDocuments = documentUseCases.getDocuments(pageable);
         return ResponseEntity.ok(pageOfDocuments);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<DocumentResource> getDocument(@PathVariable Long id) {
+        final var document = documentUseCases.getDocument(id);
+        return ResponseEntity.ok(document);
     }
 
     @PutMapping("/{id}")

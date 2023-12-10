@@ -5,7 +5,6 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
 import {NavbarModule} from "./scaffold/menubar/navbar.module";
-import {DocumentModule} from "./document/document.module";
 import {HttpClientModule} from "@angular/common/http";
 import {NgIf} from "@angular/common";
 import {MatInputModule} from "@angular/material/input";
@@ -16,6 +15,8 @@ import {MatButtonModule} from "@angular/material/button";
 import {ImportScanComponent} from './import-scan/import-scan.component';
 import {SearchDocumentComponent} from './search-document/search-document.component';
 import {FormsModule} from "@angular/forms";
+import {DocumentsModule} from "./documents/documents.module";
+import { DocumentComponent } from './document/document.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {FormsModule} from "@angular/forms";
     HomeComponent,
     ImportScanComponent,
     SearchDocumentComponent,
+    DocumentComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,7 @@ import {FormsModule} from "@angular/forms";
     MatInputModule,
     MatToolbarModule,
     MatIconModule,
-    DocumentModule,
+    DocumentsModule,
     FormsModule
   ],
   providers: [],

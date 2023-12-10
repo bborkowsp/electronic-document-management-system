@@ -2,8 +2,8 @@ import {Component, ViewChild} from '@angular/core';
 import {Observable, tap} from "rxjs";
 import {MatPaginator} from '@angular/material/paginator';
 
-import {DocumentService} from "../../document.service";
-import {Document} from "../../document";
+import {DocumentsService} from "../../documents.service";
+import {Documents} from "../../documents";
 
 
 @Component({
@@ -25,15 +25,15 @@ export class DocumentListComponent {
     'supplierCompany',
     'recipientCompany',
   ];
-  documents$: Observable<Document[]>;
+  documents$: Observable<Documents[]>;
   dataLength: number = 0;
   @ViewChild(MatPaginator) readonly paginator!: MatPaginator;
 
-  constructor(private readonly documentService: DocumentService) {
+  constructor(private readonly documentService: DocumentsService) {
     this.documents$ = this.getData();
   }
 
-  getData(): Observable<Document[]> {
+  getData(): Observable<Documents[]> {
     return this.documentService.getAllDocuments().pipe(
       tap({
         next: (documents) => {

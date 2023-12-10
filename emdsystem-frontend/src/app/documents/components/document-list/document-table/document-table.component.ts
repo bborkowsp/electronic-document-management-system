@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {Observable} from "rxjs";
-import {Document} from "../../../document";
+import {Documents} from "../../../documents";
 
 @Component({
   selector: 'app-document-table',
@@ -9,6 +9,6 @@ import {Document} from "../../../document";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DocumentTableComponent {
-  @Input() documents!: Observable<Document[]>;
+  @Input() documents!: Observable<Documents[]>;
   @Input() displayedColumns!: string[];
 }
