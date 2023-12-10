@@ -1,25 +1,45 @@
-<!-- search-document.component.html -->
 <div>
+  <h2 class="title" style="color: red;">Search Documents</h2>
   <form (submit)="search()">
     <div class="column">
       <div class="row">
-        <label for="documentId">Id Dokumentu:</label>
+        <label for="documentId">Document ID:</label>
         <input type="text" id="documentId" name="documentId" [(ngModel)]="searchQuery.documentId"/>
       </div>
       <div class="row">
-        <label for="company">Spółka:</label>
-        <input type="text" id="company" name="company" [(ngModel)]="searchQuery.company"/>
+        <label for="supplier">Supplier Company:</label>
+        <input type="text" id="supplier" name="company" [(ngModel)]="searchQuery.supplier"/>
       </div>
       <div class="row">
-        <label for="supplier">Dostawca:</label>
-        <input type="text" id="supplier" name="supplier" [(ngModel)]="searchQuery.supplier"/>
+        <label for="recipient">Recipient Company:</label>
+        <input type="text" id="recipient" name="supplier" [(ngModel)]="searchQuery.recipient"/>
       </div>
       <div class="row">
-        <label for="invoiceNumber">Numer faktury:</label>
-        <input type="text" id="invoiceNumber" name="invoiceNumber" [(ngModel)]="searchQuery.invoiceNumber"/>
+        <label for="documentNumber">Status:</label>
+        <input type="text" id="documentNumber" name="invoiceNumber" [(ngModel)]="searchQuery.documentNumber"/>
       </div>
       <div class="row">
-        <button type="submit">Szukaj</button>
+        <label for="documentNumber">Status:</label>
+        <input type="text" id="status" name="invoiceNumber" [(ngModel)]="searchQuery.status"/>
+      </div>
+      <div class="row">
+        <label for="documentNumber">Net amount:</label>
+        <input type="text" id="netAmount" name="invoiceNumber" [(ngModel)]="searchQuery.netAmount"/>
+      </div>
+      <div class="row">
+        <label for="documentNumber">Gross amount:</label>
+        <input type="text" id="grossAmount" name="invoiceNumber" [(ngModel)]="searchQuery.grossAmount"/>
+      </div>
+      <div class="row">
+        <label for="documentNumber">Sale date from:</label>
+        <input type="text" id="saleDateFrom" name="invoiceNumber" [(ngModel)]="searchQuery.saleDateFrom"/>
+      </div>
+      <div class="row">
+        <label for="documentNumber">Sale date to:</label>
+        <input type="text" id="saleDateTo" name="invoiceNumber" [(ngModel)]="searchQuery.saleDateTo"/>
+      </div>
+      <div class="row">
+        <button class="search-button" type="submit">Search</button>
       </div>
     </div>
   </form>

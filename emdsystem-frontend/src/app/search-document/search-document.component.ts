@@ -10,7 +10,13 @@ export class SearchDocumentComponent {
     documentId?: string;
     company?: string;
     supplier?: string;
-    invoiceNumber?: string;
+    recipient?: string;
+    documentNumber?: string;
+    status?: string;
+    netAmount?: string;
+    grossAmount?: string;
+    saleDateFrom?: string;
+    saleDateTo?: string;
   } = {};
 
   search() {
