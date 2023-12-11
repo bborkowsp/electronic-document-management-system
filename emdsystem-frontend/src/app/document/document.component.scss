@@ -11,14 +11,11 @@
 .document-container {
   border: 1px solid #ccc;
   padding: 10px;
+  line-height: 2;
 }
 
 .document-container p {
   margin: 0;
-}
-
-.bold-text {
-  font-weight: bold;
 }
 
 .document-container p::before {
@@ -32,3 +29,19 @@
 .document-container p:first-child::before,
 .document-container p:last-child::after {
 }
+
+.document-container span.bold-text::before {
+  margin-right: 5px;
+}
+
+.document-container span.bold-text::after {
+  margin-left: 5px;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+
+
+
