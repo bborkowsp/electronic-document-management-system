@@ -2,8 +2,8 @@ import {Component, ViewChild} from '@angular/core';
 import {Observable, tap} from "rxjs";
 import {MatPaginator} from '@angular/material/paginator';
 
-import {DocumentsService} from "../../documents.service";
 import {Documents} from "../../documents";
+import {DocumentsService} from "../../../api/services/documents.service";
 
 
 @Component({
