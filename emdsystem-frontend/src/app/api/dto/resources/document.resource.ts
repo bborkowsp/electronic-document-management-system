@@ -1,6 +1,7 @@
 import {DocumentsType} from "../../../documents/domain/document-type/documents-type";
-import {Company} from "../../../documents/domain/company/company";
-import {Payment} from "../../../documents/domain/payment/payment";
+import {PaymentResource} from "./payment.resource";
+import {DocumentScanResource} from "./document-scan.resource";
+import {CompanyResource} from "./company.resource";
 
 export class DocumentResource {
   private readonly _id: number;
@@ -13,9 +14,10 @@ export class DocumentResource {
   private readonly _issueDate: Date;
   private readonly _splitPayment: boolean;
   private readonly _isElectronicDocument: boolean;
-  private readonly _supplierCompanyResource: Company;
-  private readonly _recipientCompanyResource: Company;
-  private readonly _paymentResource: Payment;
+  private readonly _supplierCompanyResource: CompanyResource;
+  private readonly _recipientCompanyResource: CompanyResource;
+  private readonly _paymentResource: PaymentResource;
+  private readonly _documentScanResource: DocumentScanResource;
 
   constructor(
     id: number,
@@ -28,9 +30,10 @@ export class DocumentResource {
     issueDate: Date,
     splitPayment: boolean,
     isElectronicDocument: boolean,
-    supplierCompanyResource: Company,
-    recipientCompanyResource: Company,
-    paymentResource: Payment
+    supplierCompanyResource: CompanyResource,
+    recipientCompanyResource: CompanyResource,
+    paymentResource: PaymentResource,
+    documentScanResource: DocumentScanResource
   ) {
     this._id = id;
     this._documentType = documentType;
@@ -45,7 +48,9 @@ export class DocumentResource {
     this._supplierCompanyResource = supplierCompanyResource;
     this._recipientCompanyResource = recipientCompanyResource;
     this._paymentResource = paymentResource;
-  ) {
+    this._documentScanResource = documentScanResource;
+    {
+    }
+
   }
- }
 }

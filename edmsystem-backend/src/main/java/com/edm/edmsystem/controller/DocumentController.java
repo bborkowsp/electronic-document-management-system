@@ -19,8 +19,8 @@ class DocumentController {
     private final DocumentUseCases documentUseCases;
 
     @GetMapping
-    public ResponseEntity<Page<DocumentInTableResource>> getDocuments(Pageable pageable) {
-        final var pageOfDocuments = documentUseCases.getDocuments(pageable);
+    public ResponseEntity<Page<DocumentInTableResource>> getDocumentsInTable(Pageable pageable) {
+        final var pageOfDocuments = documentUseCases.getDocumentsInTable(pageable);
         return ResponseEntity.ok(pageOfDocuments);
     }
 

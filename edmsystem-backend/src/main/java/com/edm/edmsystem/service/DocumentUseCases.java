@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.Map;
 
 public interface DocumentUseCases {
-    Page<DocumentInTableResource> getDocuments(Pageable pageable);
+    Page<DocumentInTableResource> getDocumentsInTable(Pageable pageable);
 
     DocumentResource getDocument(Long id);
 

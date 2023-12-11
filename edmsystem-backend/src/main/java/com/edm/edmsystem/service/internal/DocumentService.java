@@ -29,9 +29,9 @@ class DocumentService implements DocumentUseCases {
 
     @Override
     @Transactional(readOnly = true)
-    public Page<DocumentInTableResource> getDocuments(Pageable pageable) {
-        final var products = documentRepository.findAll(pageable);
-        return products.map(documentMapper::mapDocumentToDocumentInTableResource);
+    public Page<DocumentInTableResource> getDocumentsInTable(Pageable pageable) {
+        final var documents = documentRepository.findAll(pageable);
+        return documents.map(documentMapper::mapDocumentToDocumentInTableResource);
     }
 
     @Override

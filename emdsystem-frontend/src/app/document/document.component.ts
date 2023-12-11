@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable} from "rxjs";
+import {DocumentResource} from "../api/dto/resources/document.resource";
+import {DocumentsService} from "../documents/documents.service";
 
 @Component({
   selector: 'app-document',
@@ -10,6 +12,10 @@ export class DocumentComponent implements OnInit {
   private static readonly ID_PARAM_KEY = 'id';
   document$: Observable<DocumentResource> | null = null;
 
+  constructor(
+    private readonly documentService: DocumentsService,
+  ) {
+  }
 
   ngOnInit(): void {
     this.getDocument();
@@ -17,10 +23,6 @@ export class DocumentComponent implements OnInit {
 
 
   private getDocument() {
-    this.recipe$ = this.activatedRoute.paramMap.pipe(
-      map((paramMap) => parseInt(paramMap.get(RecipeComponent.ID_PARAM_KEY)!)),
-      tap((id) => (this.recipeId = id)),
-      switchMap((id) => this.recipeService.getRecipe(id)),
-    );
+
   }
 }
