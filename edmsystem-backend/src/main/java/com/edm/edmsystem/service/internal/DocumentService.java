@@ -5,6 +5,7 @@ import com.edm.edmsystem.dto.resources.DocumentInTableResource;
 import com.edm.edmsystem.dto.resources.DocumentResource;
 import com.edm.edmsystem.mapper.DocumentMapper;
 import com.edm.edmsystem.model.Document;
+import com.edm.edmsystem.model.DocumentScan;
 import com.edm.edmsystem.repository.DocumentRepository;
 import com.edm.edmsystem.service.DocumentUseCases;
 import lombok.AccessLevel;
@@ -13,7 +14,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.Map;
 
 @Service
@@ -46,9 +49,12 @@ class DocumentService implements DocumentUseCases {
         documentRepository.save(document);
     }
 
-    public Document createDocumentFromPdf(Map<String, String> results) {
+    public Document createDocumentFromPdf(Map<String, String> results, MultipartFile file) throws IOException {
         return Document.builder()
                 .documentNumber(results.get("documentNumber"))
+                .scan(DocumentScan.builder()
+                        .pdfData(file.getBytes())
+                        .build())
                 .build();
     }
 

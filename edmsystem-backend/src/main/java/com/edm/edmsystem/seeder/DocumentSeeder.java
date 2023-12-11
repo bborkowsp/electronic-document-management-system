@@ -56,6 +56,9 @@ class DocumentSeeder implements Seeder {
                         .build())
                 .documentChangeHistory(documentChangeHistory)
                 .payment(payment)
+                .scan(DocumentScan.builder()
+                        .pdfData("src\\main\\resources\\invoice.pdf".getBytes())
+                        .build())
                 .build();
     }
 

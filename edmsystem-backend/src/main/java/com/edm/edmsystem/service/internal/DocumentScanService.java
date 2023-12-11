@@ -33,7 +33,7 @@ public class DocumentScanService implements DocumentScanUseCases {
             try {
                 final var extractedTextFromDocument = extractTextFromDocument(uploadedFile);
                 Map<String, String> foundMatches = findDocumentDetails(extractedTextFromDocument);
-                documentRepository.save(documentUseCases.createDocumentFromPdf(foundMatches));
+                documentRepository.save(documentUseCases.createDocumentFromPdf((foundMatches), uploadedFile));
             } catch (IOException e) {
                 throw new IOException();
             }
