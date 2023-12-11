@@ -18,6 +18,7 @@ class DocumentMapperService implements DocumentMapper {
     private final PropertyMapper propertyMapper;
     private final DocumentStatusMapper documentStatusMapper;
     private final DocumentHistoryMapper documentHistoryMapper;
+    private final DocumentScanMapper documentScanMapper;
 
     @Override
     public DocumentResource mapDocumentToDocumentResource(@NonNull Document document) {
@@ -37,6 +38,7 @@ class DocumentMapperService implements DocumentMapper {
                 .recipientCompanyResource(companyMapper.mapCompanyToCompanyResource(document.getRecipientCompany()))
                 .documentStatus(document.getDocumentStatus())
                 .documentChangeHistory(document.getDocumentChangeHistory().get(document.getDocumentChangeHistory().size() - 1))
+                .scanResource(documentScanMapper.mapDocumentScanToDocumentScanResource(document.getScan()))
                 .build();
     }
 

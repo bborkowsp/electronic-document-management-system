@@ -25,6 +25,7 @@ public record DocumentResource(
         CompanyResource supplierCompanyResource,
         CompanyResource recipientCompanyResource,
         DocumentHistory documentChangeHistory,
-        PaymentResource paymentResource
+        PaymentResource paymentResource,
+        DocumentScanResource scanResource
 ) {
 }

@@ -1,5 +1,8 @@
 package com.edm.edmsystem.mapper;
 
+import com.edm.edmsystem.dto.resources.DocumentScanResource;
+import com.edm.edmsystem.model.DocumentScan;
+
 public interface DocumentScanMapper {
-    //   DocumentScan mapDocumentScnaRequestToDocumentScan(UploadDocumentScanRequest uploadDocumentScanRequest);
+    DocumentScanResource mapDocumentScanToDocumentScanResource(DocumentScan scan);
 }
