@@ -1,0 +1,34 @@
+.container-outer {
+  margin: 10px;
+}
+
+.container-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.document-container {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.document-container p {
+  margin: 0;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.document-container p::before {
+  margin-right: 5px;
+}
+
+.document-container p::after {
+  margin-left: 5px;
+}
+
+.document-container p:first-child::before,
+.document-container p:last-child::after {
+}
