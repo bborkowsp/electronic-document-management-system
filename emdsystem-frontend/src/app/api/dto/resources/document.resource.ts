@@ -1,4 +1,4 @@
-import {DocumentsType} from "../../../documents/domain/document-type/documents-type";
+import {DocumentsType} from "../../../domain/document-type/documents-type";
 import {PaymentResource} from "./payment.resource";
 import {DocumentScanResource} from "./document-scan.resource";
 import {CompanyResource} from "./company.resource";

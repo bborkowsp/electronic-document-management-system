@@ -1,6 +1,7 @@
-import {Payment} from "./domain/payment/payment";
-import {Company} from "./domain/company/company";
-import {DocumentsType} from "./domain/document-type/documents-type";
+import {DocumentsType} from "../domain/document-type/documents-type";
+import {Payment} from "../domain/payment/payment";
+import {Company} from "../domain/company/company";
+
 
 export class Documents {
   constructor(

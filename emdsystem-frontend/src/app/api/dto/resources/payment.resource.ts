@@ -1,4 +1,4 @@
-import {Currency} from "../../../documents/domain/currency/currency";
+import {Currency} from "../../../domain/currency/currency";
 
 export class PaymentResource {
   private readonly _bankAccountNumber: string;
