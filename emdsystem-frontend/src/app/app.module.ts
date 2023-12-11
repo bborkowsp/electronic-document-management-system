@@ -16,7 +16,7 @@ import {ImportScanComponent} from './import-scan/import-scan.component';
 import {SearchDocumentComponent} from './search-document/search-document.component';
 import {FormsModule} from "@angular/forms";
 import {DocumentsModule} from "./documents/documents.module";
-import { DocumentComponent } from './document/document.component';
+import {DocumentComponent} from './document/document.component';
 
 @NgModule({
   declarations: [
