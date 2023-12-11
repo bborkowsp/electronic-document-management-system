@@ -3,7 +3,7 @@ import {Observable, tap} from "rxjs";
 import {MatPaginator} from '@angular/material/paginator';
 
 import {Documents} from "../../documents";
-import {DocumentsService} from "../../../api/services/documents.service";
+import {DocumentService} from "../../../api/services/document.service";
 
 
 @Component({
@@ -29,7 +29,7 @@ export class DocumentListComponent {
   dataLength: number = 0;
   @ViewChild(MatPaginator) readonly paginator!: MatPaginator;
 
-  constructor(private readonly documentService: DocumentsService) {
+  constructor(private readonly documentService: DocumentService) {
     this.documents$ = this.getData();
   }
 

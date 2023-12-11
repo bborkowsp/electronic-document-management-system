@@ -5,5 +5,6 @@ public enum DocumentStatus {
     ACCEPTED,
     PENDING,
     EDITED,
-    CANCELLED
+    CANCELLED,
+    AFTER_OCR
 }

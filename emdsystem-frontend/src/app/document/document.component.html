@@ -1,0 +1,7 @@
+<article *ngIf="document$ | async as document" class="article">
+  <h1 class="title">Id: {{ document.id }}</h1>
+  <p>Status: {{ document.documentStatus }}</p>
+  <!-- Add more lines for other properties -->
+  <p>Receipt Date: {{ document.receiptDate | date:'short' }}</p>
+  <!-- Add more lines as needed -->
+</article>

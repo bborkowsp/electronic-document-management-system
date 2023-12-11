@@ -2,10 +2,12 @@ import {DocumentsType} from "../../../domain/document-type/documents-type";
 import {PaymentResource} from "./payment.resource";
 import {DocumentScanResource} from "./document-scan.resource";
 import {CompanyResource} from "./company.resource";
+import {DocumentStatusResource} from "./document-status.resource";
 
 export class DocumentResource {
   private readonly _id: number;
   private readonly _documentType: DocumentsType;
+  private readonly _documentStatus: DocumentStatusResource;
   private readonly _documentNumber: string;
   private readonly _correctedInvoiceNumber: string;
   private readonly _documentDescription: string;
@@ -22,6 +24,7 @@ export class DocumentResource {
   constructor(
     id: number,
     documentType: DocumentsType,
+    documentStatus: DocumentStatusResource,
     documentNumber: string,
     correctedInvoiceNumber: string,
     documentDescription: string,
@@ -37,6 +40,7 @@ export class DocumentResource {
   ) {
     this._id = id;
     this._documentType = documentType;
+    this._documentStatus = documentStatus;
     this._documentNumber = documentNumber;
     this._correctedInvoiceNumber = correctedInvoiceNumber;
     this._documentDescription = documentDescription;
@@ -49,8 +53,65 @@ export class DocumentResource {
     this._recipientCompanyResource = recipientCompanyResource;
     this._paymentResource = paymentResource;
     this._documentScanResource = documentScanResource;
-    {
-    }
+  }
 
+  get id(): number {
+    return this._id;
+  }
+
+  get documentType(): DocumentsType {
+    return this._documentType;
+  }
+
+  get documentStatus(): DocumentStatusResource {
+    return this._documentStatus;
+  }
+
+  get documentNumber(): string {
+    return this._documentNumber;
+  }
+
+  get correctedInvoiceNumber(): string {
+    return this._correctedInvoiceNumber;
+  }
+
+  get documentDescription(): string {
+    return this._documentDescription;
+  }
+
+  get receiptDate(): Date {
+    return this._receiptDate;
+  }
+
+  get saleDate(): Date {
+    return this._saleDate;
+  }
+
+  get issueDate(): Date {
+    return this._issueDate;
+  }
+
+  get splitPayment(): boolean {
+    return this._splitPayment;
+  }
+
+  get isElectronicDocument(): boolean {
+    return this._isElectronicDocument;
+  }
+
+  get supplierCompanyResource(): CompanyResource {
+    return this._supplierCompanyResource;
+  }
+
+  get recipientCompanyResource(): CompanyResource {
+    return this._recipientCompanyResource;
+  }
+
+  get paymentResource(): PaymentResource {
+    return this._paymentResource;
+  }
+
+  get documentScanResource(): DocumentScanResource {
+    return this._documentScanResource;
   }
 }
