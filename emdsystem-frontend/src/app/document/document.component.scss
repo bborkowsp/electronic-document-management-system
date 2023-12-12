@@ -12,7 +12,7 @@
   border: 1px solid #ccc;
   padding: 10px;
   line-height: 2;
-  background-color: #f2f2f2; /* Dodaj tę linię, aby ustawić kolor tła */
+  background-color: #f2f2f2;
   margin-top: 10px;
 }
 
@@ -81,7 +81,7 @@
 
 .pdf-container {
   flex: 1;
-  max-width: 50%; /* Adjust as needed */
+  max-width: 50%;
   box-sizing: border-box;
   border: 1px solid #ccc;
   padding: 10px;
@@ -103,23 +103,22 @@
   background: #bfdbff;
 }
 
-
 .document-details-title h3 {
-  margin: 0; /* Remove default margin on h3 */
+  margin: 0;
   text-align: center;
 }
 
 .save-button {
   text-align: center;
-  margin-top: 20px; /* Adjust as needed */
+  margin-top: 20px;
 }
 
 .btn-custom {
-  background-color: #bfdbff; /* Dodaj swój kolor tła */
+  background-color: #bfdbff;
   color: black;
   font-weight: bold;
-  width: 100px; /* Adjust as needed */
-  padding: 10px; /* Adjust as needed */
+  width: 100px;
+  padding: 10px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -130,9 +129,9 @@
 
 .btn-custom img {
   margin-right: 5px;
-  order: -1; /* Zmiana kolejności, aby ikona była po lewej stronie */
+  order: -1;
 }
 
 .button-text {
-  text-align: center; /* Zmiana kolejności, aby tekst był po prawej stronie */
+  text-align: center;
 }
