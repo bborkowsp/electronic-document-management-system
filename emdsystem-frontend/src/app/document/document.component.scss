@@ -13,7 +13,14 @@
   padding: 10px;
   line-height: 2;
   background-color: #f2f2f2; /* Dodaj tę linię, aby ustawić kolor tła */
-  margin-top: 100px;
+  margin-top: 10px;
+}
+
+.document-container-details {
+  border: 1px solid #ccc;
+  padding: 10px;
+  line-height: 2;
+  background-color: #f2f2f2;
 }
 
 .row {
@@ -54,7 +61,7 @@
 
 .details-container {
   flex: 1;
-  max-width: 50%; /* Adjust as needed */
+  max-width: 50%;
   height: 800px;
   box-sizing: border-box;
   border: 1px solid #ccc;
@@ -87,3 +94,17 @@
   width: 100%;
   height: 100%;
 }
+
+.document-details-title {
+  margin-top: 150px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 0px;
+  background: #bfdbff;
+}
+
+.document-details-title h3 {
+  margin: 0; /* Remove default margin on h3 */
+  text-align: center;
+}
+
