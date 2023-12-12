@@ -4,4 +4,8 @@ export class DocumentScanResource {
   constructor(encodedPdf: string) {
     this._encodedPdf = encodedPdf;
   }
+
+  get encodedPdf(): string {
+    return this._encodedPdf;
+  }
 }

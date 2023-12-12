@@ -3,6 +3,7 @@ import {map, Observable, switchMap, tap} from "rxjs";
 import {DocumentResource} from "../api/dto/resources/document.resource";
 import {DocumentService} from "../api/services/document.service";
 import {ActivatedRoute} from "@angular/router";
+import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-document',
@@ -17,6 +18,7 @@ export class DocumentComponent implements OnInit {
   constructor(
     private readonly documentService: DocumentService,
     private readonly activatedRoute: ActivatedRoute,
+    private readonly sanitizer: DomSanitizer
   ) {
   }
 
@@ -31,5 +33,10 @@ export class DocumentComponent implements OnInit {
       tap((id) => (this.documentId = id)),
       switchMap((id) => this.documentService.getDocument(id)),
     );
+  }
+
+  getPdfUrl(encodedPdf: string) {
+    const dataUrl = `data:application/pdf;base64,${encodedPdf}`;
+    return this.sanitizer.bypassSecurityTrustResourceUrl(dataUrl);
   }
 }
