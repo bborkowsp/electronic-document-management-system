@@ -44,32 +44,7 @@ class DocumentMapperService implements DocumentMapper {
 
     @Override
     public void updateDocumentFromUpdateDocumentRequest(Document document, UpdateDocumentRequest updateDocumentRequest) {
-//        final var recipentCompany = companyMapper.mapCompanyInTableResourceToCompany(updateDocumentRequest
-//                .recipientCompanyInTableResource());
-//        final var supplierCompany = companyMapper.mapCompanyInTableResourceToCompany(updateDocumentRequest
-//                .supplierCompanyInTableResource());
-//        final var payment = paymentMapper.(updateDocumentRequest.paymentInTableResource());
-//        final var property = propertyMapper.mapPropertyResourceToProperty(updateDocumentRequest.propertyResource());
-//        final var documentStatus = documentStatusMapper.mapDocumentStatusResourceToDocumentStatus(updateDocumentRequest
-//                .documentStatusResource());
-//        final var documentHistory = updateDocumentRequest.documentChangeHistory().stream()
-//                .map(documentHistoryMapper::mapDocumentHistoryResourceToDocumentHistory)
-//                .toList();
-//        document.setRecipientCompany(recipentCompany);
-//        document.setSupplierCompany(supplierCompany);
-//        document.setPayment(payment);
-//        document.setProperty(property);
-//        document.setDocumentStatus(documentStatus);
-//        document.setDocumentChangeHistory(documentHistory);
-//        document.setDocumentType(updateDocumentRequest.documentTypeResource());
-//        document.setDocumentNumber(updateDocumentRequest.documentNumber());
-//        document.setCorrectedInvoiceNumber(updateDocumentRequest.correctedInvoiceNumber());
-//        document.setDocumentDescription(updateDocumentRequest.documentDescription());
-//        document.setReceiptDate(updateDocumentRequest.receiptDate());
-//        document.setSaleDate(updateDocumentRequest.saleDate());
-//        document.setIssueDate(updateDocumentRequest.issueDate());
-//        document.setSplitPayment(updateDocumentRequest.splitPayment());
-//        document.setIsElectronicDocument(updateDocumentRequest.isElectronicDocument());
+
     }
 
     @Override
