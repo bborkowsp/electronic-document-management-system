@@ -3,6 +3,7 @@ import {PaymentResource} from "./payment.resource";
 import {DocumentScanResource} from "./document-scan.resource";
 import {CompanyResource} from "./company.resource";
 import {DocumentStatusResource} from "./document-status.resource";
+import {DocumentChangeHistoryResource} from "./document-change-history.resource";
 
 export class DocumentResource {
   private readonly _id: number;
@@ -18,6 +19,7 @@ export class DocumentResource {
   private readonly _isElectronicDocument: boolean;
   private readonly _supplierCompanyResource: CompanyResource;
   private readonly _recipientCompanyResource: CompanyResource;
+  private readonly _documentChangeHistory: DocumentChangeHistoryResource;
   private readonly _paymentResource: PaymentResource;
   private readonly _documentScanResource: DocumentScanResource;
 
@@ -35,6 +37,7 @@ export class DocumentResource {
     isElectronicDocument: boolean,
     supplierCompanyResource: CompanyResource,
     recipientCompanyResource: CompanyResource,
+    documentChangeHistory: DocumentChangeHistoryResource,
     paymentResource: PaymentResource,
     documentScanResource: DocumentScanResource
   ) {
@@ -51,6 +54,7 @@ export class DocumentResource {
     this._isElectronicDocument = isElectronicDocument;
     this._supplierCompanyResource = supplierCompanyResource;
     this._recipientCompanyResource = recipientCompanyResource;
+    this._documentChangeHistory = documentChangeHistory;
     this._paymentResource = paymentResource;
     this._documentScanResource = documentScanResource;
   }
@@ -105,6 +109,10 @@ export class DocumentResource {
 
   get recipientCompanyResource(): CompanyResource {
     return this._recipientCompanyResource;
+  }
+
+  get documentChangeHistory(): DocumentChangeHistoryResource {
+    return this._documentChangeHistory;
   }
 
   get paymentResource(): PaymentResource {

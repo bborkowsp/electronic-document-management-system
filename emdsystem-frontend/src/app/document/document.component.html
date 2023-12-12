@@ -2,9 +2,26 @@
   <div class="container-outer">
     <h2 class="container-title">Document Details</h2>
     <div class="document-container">
-      <p><span class="bold-text">Id:</span> {{ document.id }}</p>
-      <p><span class="bold-text">Status:</span> {{ document.documentStatus }}</p>
-      <p><span class="bold-text">Receipt Date:</span> {{ document.receiptDate | date:'short' }}</p>
+      <div class="row">
+        <div class="column">
+          <p><span class="bold-text">Id:</span></p>
+          <p><span class="bold-text">Status:</span></p>
+          <p><span class="bold-text">Difference(net) corrective-corrected:</span></p>
+        </div>
+        <div class="column">
+          <p>{{ document.id }}</p>
+          <p>{{ document.documentStatus }}</p>
+          <p>{{ document.correctedInvoiceNumber }}</p>
+        </div>
+        <div class="column">
+          <p><span class="bold-text">Date of last modification:</span></p>
+          <p><span class="bold-text">Editer</span></p>
+        </div>
+        <div class="column">
+          <p>{{ document.documentChangeHistory.modificationDate }}</p>
+          <p>{{ document.documentChangeHistory.requester.firstName}} {{ document.documentChangeHistory.requester.lastName}}</p>
+        </div>
+      </div>
     </div>
   </div>
 </article>
