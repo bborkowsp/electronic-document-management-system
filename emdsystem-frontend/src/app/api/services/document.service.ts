@@ -29,4 +29,10 @@ export class DocumentService {
   }
 
 
+  save(document: DocumentResource) {
+    return this.httpClient.put<void>(
+      `${this.baseURL}/${document.id}`,
+      document
+    );
+  }
 }

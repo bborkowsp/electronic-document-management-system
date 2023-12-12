@@ -39,4 +39,8 @@ export class DocumentComponent implements OnInit {
   getPdfSource(scanResource: DocumentScanResource): string {
     return `data:application/pdf;base64,${scanResource.encodedPdf}`;
   }
+
+  save(document: DocumentResource) {
+    this.documentService.save(document).subscribe();
+  }
 }

@@ -26,6 +26,12 @@
   </div>
   <div class="flex-container">
     <div class="details-container">
+      <div class="save-button">
+        <button class="btn btn-custom" (click)="save(document)">
+          <img src="assets/save.png" alt="Save Icon" width="24" height="24">
+          <span class="button-text">Save</span>
+        </button>
+      </div>
       <div class="document-details-title">
         <h3>Document Details</h3>
       </div>
@@ -52,7 +58,7 @@
             <br>
             <input type="text" [(ngModel)]="document.documentType"/>
             <br>
-            <input type="text" [(ngModel)]="document.supplierCompanyResource._name"/>
+            <input type="text" [(ngModel)]="document.supplierCompanyResource.name"/>
             <br>
             <input type="text" [(ngModel)]="document.documentNumber"/>
             <br>

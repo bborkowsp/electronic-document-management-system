@@ -11,7 +11,6 @@ import lombok.Builder;
 import lombok.extern.jackson.Jacksonized;
 
 import java.time.LocalDate;
-import java.util.List;
 
 @Builder
 @Jacksonized
@@ -30,7 +29,7 @@ public record UpdateDocumentRequest(
         @NotNull @Valid CompanyInTableResource supplierCompanyInTableResource,
         @NotNull @Valid CompanyInTableResource recipientCompanyInTableResource,
         @NotNull @Valid PropertyResource propertyResource,
-        @NotNull List<@NotNull @Valid DocumentHistoryResource> documentChangeHistory,
+        @NotNull DocumentHistoryResource documentChangeHistory,
         @Valid PaymentInTableResource paymentInTableResource
 ) {
 }
