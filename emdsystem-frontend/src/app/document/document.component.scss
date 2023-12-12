@@ -50,3 +50,15 @@
 .bold-text {
   font-weight: bold;
 }
+
+.details-container {
+  flex: 1; /* Take up all available space in the container-outer */
+  max-width: 50%; /* Limit the width to 50% */
+  box-sizing: border-box; /* Include padding and border in the width calculation */
+  border: 1px solid #ccc;
+  padding: 10px;
+  line-height: 2;
+  background-color: #f2f2f2;
+  margin-top: 10px;
+}
+

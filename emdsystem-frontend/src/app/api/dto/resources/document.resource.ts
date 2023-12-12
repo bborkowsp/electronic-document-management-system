@@ -7,21 +7,21 @@ import {DocumentChangeHistoryResource} from "./document-change-history.resource"
 
 export class DocumentResource {
   private readonly _id: number;
-  private readonly _documentType: DocumentsType;
+  _documentType: DocumentsType;
   private readonly _documentStatus: DocumentStatusResource;
-  private readonly _documentNumber: string;
-  private readonly _correctedInvoiceNumber: string;
-  private readonly _documentDescription: string;
-  private readonly _receiptDate: Date;
-  private readonly _saleDate: Date;
-  private readonly _issueDate: Date;
-  private readonly _splitPayment: boolean;
-  private readonly _isElectronicDocument: boolean;
-  private readonly _supplierCompanyResource: CompanyResource;
-  private readonly _recipientCompanyResource: CompanyResource;
-  private readonly _documentChangeHistory: DocumentChangeHistoryResource;
-  private readonly _paymentResource: PaymentResource;
-  private readonly _documentScanResource: DocumentScanResource;
+  _documentNumber: string;
+  _correctedInvoiceNumber: string;
+  _documentDescription: string;
+  _receiptDate: Date;
+  _saleDate: Date;
+  _issueDate: Date;
+  _splitPayment: boolean;
+  _isElectronicDocument: boolean;
+  _supplierCompanyResource: CompanyResource;
+  _recipientCompanyResource: CompanyResource;
+  _documentChangeHistory: DocumentChangeHistoryResource;
+  _paymentResource: PaymentResource;
+  _documentScanResource: DocumentScanResource;
 
   constructor(
     id: number,
@@ -121,5 +121,49 @@ export class DocumentResource {
 
   get documentScanResource(): DocumentScanResource {
     return this._documentScanResource;
+  }
+
+  set documentType(value: DocumentsType) {
+    this._documentType = value;
+  }
+
+  set documentNumber(value: string) {
+    this._documentNumber = value;
+  }
+
+  set correctedInvoiceNumber(value: string) {
+    this._correctedInvoiceNumber = value;
+  }
+
+  set documentDescription(value: string) {
+    this._documentDescription = value;
+  }
+
+  set receiptDate(value: Date) {
+    this._receiptDate = value;
+  }
+
+  set saleDate(value: Date) {
+    this._saleDate = value;
+  }
+
+  set issueDate(value: Date) {
+    this._issueDate = value;
+  }
+
+  set splitPayment(value: boolean) {
+    this._splitPayment = value;
+  }
+
+  set isElectronicDocument(value: boolean) {
+    this._isElectronicDocument = value;
+  }
+
+  set supplierCompanyResource(value: CompanyResource) {
+    this._supplierCompanyResource = value;
+  }
+
+  set recipientCompanyResource(value: CompanyResource) {
+    this._recipientCompanyResource = value;
   }
 }

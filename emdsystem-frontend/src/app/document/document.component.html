@@ -24,4 +24,56 @@
       </div>
     </div>
   </div>
+  <div class="details-container">
+    <div class="document-container">
+      <div class="row">
+        <div class="column">
+          <p><span>Recipient company:</span></p>
+          <p><span>Document type:</span></p>
+          <p><span>Supplier company:</span></p>
+          <p><span>Document number:</span></p>
+          <p><span>Sale date:</span></p>
+          <p><span>Receipt date:</span></p>
+          <p><span>Issue date:</span></p>
+          <p><span>Net amount:</span></p>
+          <p><span>Gross amount:</span></p>
+          <p><span>Currency:</span></p>
+          <p><span>Corrected invoice number:</span></p>
+          <p><span>Bank account:</span></p>
+          <p><span>Payment date:</span></p>
+          <p><span>Is eDocument?:</span></p>
+        </div>
+        <div class="column">
+          <input type="text" [(ngModel)]="document.recipientCompanyResource.name"/>
+          <br>
+          <input type="text" [(ngModel)]="document.documentType"/>
+          <br>
+          <input type="text" [(ngModel)]="document.supplierCompanyResource._name"/>
+          <br>
+          <input type="text" [(ngModel)]="document.documentNumber"/>
+          <br>
+          <input type="text" [(ngModel)]="document.saleDate"/>
+          <br>
+          <input type="text" [(ngModel)]="document.receiptDate"/>
+          <br>
+          <input type="text" [(ngModel)]="document.issueDate"/>
+          <br>
+          <input type="text" [(ngModel)]="document.paymentResource.netAmount"/>
+          <br>
+          <input type="text" [(ngModel)]="document.paymentResource.grossAmount"/>
+          <br>
+          <input type="text" [(ngModel)]="document.paymentResource.currency"/>
+          <br>
+          <input type="text" [(ngModel)]="document.correctedInvoiceNumber"/>
+          <br>
+          <input type="text" [(ngModel)]="document.paymentResource.bankAccountNumber"/>
+          <br>
+          <input type="text" [(ngModel)]="document.paymentResource.dueDate"/>
+          <br>
+          <input type="text" [(ngModel)]="document.isElectronicDocument"/>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </article>
