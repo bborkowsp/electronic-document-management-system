@@ -17,6 +17,8 @@ import {SearchDocumentComponent} from './search-document/search-document.compone
 import {FormsModule} from "@angular/forms";
 import {DocumentsModule} from "./documents/documents.module";
 import {DocumentComponent} from './document/document.component';
+import {PdfViewerModule} from "ng2-pdf-viewer";
+import {NgxExtendedPdfViewerModule} from "ngx-extended-pdf-viewer";
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import {DocumentComponent} from './document/document.component';
     MatToolbarModule,
     MatIconModule,
     DocumentsModule,
-    FormsModule
+    FormsModule,
+    PdfViewerModule,
+    NgxExtendedPdfViewerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

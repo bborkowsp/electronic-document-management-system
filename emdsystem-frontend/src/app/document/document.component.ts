@@ -4,6 +4,7 @@ import {DocumentResource} from "../api/dto/resources/document.resource";
 import {DocumentService} from "../api/services/document.service";
 import {ActivatedRoute} from "@angular/router";
 import {DomSanitizer} from "@angular/platform-browser";
+import {DocumentScanResource} from "../api/dto/resources/document-scan.resource";
 
 @Component({
   selector: 'app-document',
@@ -35,8 +36,7 @@ export class DocumentComponent implements OnInit {
     );
   }
 
-  getPdfUrl(encodedPdf: string) {
-    const dataUrl = `data:application/pdf;base64,${encodedPdf}`;
-    return this.sanitizer.bypassSecurityTrustResourceUrl(dataUrl);
+  getPdfSource(scanResource: DocumentScanResource): string {
+    return `data:application/pdf;base64,${scanResource.encodedPdf}`;
   }
 }
